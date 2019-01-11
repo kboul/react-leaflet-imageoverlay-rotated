@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "leaflet": "^1.4.0",
+    "leaflet-imageoverlay-rotated": "^0.1.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-leaflet": "^2.1.4",
