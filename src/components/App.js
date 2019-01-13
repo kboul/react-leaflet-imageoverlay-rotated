@@ -40,10 +40,12 @@ class MapExample extends Component {
     };
 
     increase = () => {
+        if (this.state.opacity.toFixed(1) > 0.99) return;
         this.setState({ opacity: this.state.opacity + 0.1 });
     };
 
     decrease = () => {
+        if (this.state.opacity.toFixed(1) < 0.1) return;
         this.setState({ opacity: this.state.opacity - 0.1 });
     };
 
