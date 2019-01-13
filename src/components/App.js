@@ -8,16 +8,14 @@ const height = { height: "100vh" };
 const center = { lat: 51.5, lng: 0.12 };
 const url = imagesUrls[1];
 
-// const topLeftCorner = L.latLng(40.522251, -3.776358),
-//     topRightCorner = L.latLng(40.522251, -3.774176),
-//     bottomLeftCorner = L.latLng(40.521027, -3.776358);
+// const topLeftCorner = L.latLng(40.52256691873593, -3.7743186950683594),
+//     topRightCorner = L.latLng(40.5210255066156, -3.7734764814376835),
+//     bottomLeftCorner = L.latLng(40.52180437272552, -3.7768453359603886);
 
 // location center
 const topLeftCorner = L.latLng(37.9972071, 23.818674582788);
-// y: same with above, x: +0.002
-const topRightCorner = L.latLng(topLeftCorner.lat, topLeftCorner.lng + 0.0022);
-//  x: same with center's x, y: -0.001
-const bottomLeftCorner = L.latLng(topLeftCorner.lat - 0.0012, topLeftCorner.lng);
+const topRightCorner = L.latLng(topLeftCorner.lat, topLeftCorner.lng + 0.00084);
+const bottomLeftCorner = L.latLng(topLeftCorner.lat - 0.00076, topLeftCorner.lng);
 
 // insert marker icon manually
 const customMarker = new L.icon({
