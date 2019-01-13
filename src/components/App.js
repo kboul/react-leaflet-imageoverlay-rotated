@@ -3,7 +3,7 @@ import { Map, TileLayer } from "react-leaflet";
 import L from "leaflet";
 import ImageOverlayRotated from "./ImageOverlayRotated";
 
-const height = { height: "97.8vh" };
+const height = { height: "100vh" };
 const center = { lat: 51.5, lng: 0.12 };
 const url = "https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg";
 
@@ -53,36 +53,59 @@ class MapExample extends Component {
 
     render() {
         return (
-            <React.Fragment>
-                <div style={{ display: 'inline-block' }}>
-                    <button onClick={this.increase}>Increase Opacity</button>
-                    <span style={{ padding: '0px 5px 0px 5px' }}> Opacity: {this.state.opacity.toFixed(1)}</span>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-10">
+                        <Map
+                            style={height}
+                            center={center}
+                            zoom={18}
+                            ref={m => {
+                                this.map = m;
+                            }}
+                        >
+                            <TileLayer
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                            />
+
+                            <ImageOverlayRotated
+                                url={url}
+                                corners={[point1, point2, point3]}
+                                markers={[marker1, marker2, marker3]}
+                                opacity={this.state.opacity}
+                                markersVisible={this.state.markersVisible}
+                            />
+                        </Map>
+                    </div>
+                    <div className="col-2 mt-2">
+                        <div className="form-group">
+                            <button
+                                className="btn btn-primary btn-sm"
+                                onClick={this.increase}>
+                                + Opacity
+                            </button>
+                        </div>
+                        <div className="form-group">
+                            Opacity: {this.state.opacity.toFixed(1)}
+                        </div>
+                        <div className="form-group">
+                            <button
+                                className="btn btn-primary btn-sm"
+                                onClick={this.decrease}>
+                                - Opacity
+                            </button>
+                        </div>
+                        <div className="form-group">
+                            <button
+                                className="btn btn-primary btn-sm"
+                                onClick={this.toggleMarkers}>
+                                Toggle Markers
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <button onClick={this.decrease}>Decrease Opacity</button>
-                <button onClick={this.toggleMarkers}>Toggle Markers</button>
-
-                <Map
-                    style={height}
-                    center={center}
-                    zoom={18}
-                    ref={m => {
-                        this.map = m;
-                    }}
-                >
-                    <TileLayer
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    />
-
-                    <ImageOverlayRotated
-                        url={url}
-                        corners={[point1, point2, point3]}
-                        markers={[marker1, marker2, marker3]}
-                        opacity={this.state.opacity}
-                        markersVisible={this.state.markersVisible}
-                    />
-                </Map>
-            </React.Fragment >
+            </div>
         );
     }
 }
