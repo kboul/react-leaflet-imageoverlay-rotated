@@ -7,7 +7,6 @@ import { centers } from './centers';
 
 const height = { height: "100vh" };
 const center = { lat: 51.5, lng: 0.12 };
-const url = imagesUrls[1];
 
 // const topLeftCorner = L.latLng(40.52256691873593, -3.7743186950683594),
 //     topRightCorner = L.latLng(40.5210255066156, -3.7734764814376835),
@@ -39,7 +38,8 @@ const bottomLeftMarker = L.marker(bottomLeftCorner, customMarkerOptions);
 class MapExample extends Component {
     state = {
         opacity: 0.5,
-        markersVisible: true
+        markersVisible: true,
+        url: imagesUrls[1]
     };
 
     increase = () => {
@@ -55,6 +55,10 @@ class MapExample extends Component {
     toggleMarkers = () => {
         this.setState({ markersVisible: !this.state.markersVisible });
     };
+
+    changeUrl = () => {
+        this.setState({ url: imagesUrls[0] });
+    }
 
     render() {
         return (
@@ -75,7 +79,7 @@ class MapExample extends Component {
                             />
 
                             <ImageOverlayRotated
-                                url={url}
+                                url={this.state.url}
                                 corners={[
                                     topLeftCorner,
                                     topRightCorner,
@@ -114,6 +118,13 @@ class MapExample extends Component {
                                 className="btn btn-primary btn-sm"
                                 onClick={this.toggleMarkers}>
                                 Toggle Markers
+                            </button>
+                        </div>
+                        <div className="form-group">
+                            <button
+                                className="btn btn-primary btn-sm"
+                                onClick={this.changeUrl}>
+                                Change Url
                             </button>
                         </div>
                     </div>

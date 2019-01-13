@@ -46,6 +46,10 @@ class ImageOverlayRotated extends MapLayer {
         if (toProps.opacity !== fromProps.opacity) {
             this.leafletElement.setOpacity(toProps.opacity);
         }
+        // dynamically change the url of the image from outside
+        if (toProps.url !== fromProps.url) {
+            this.leafletElement.setUrl(toProps.url);
+        }
         // dynamically toggle markers visibility from outside
         if (toProps.markersVisible !== fromProps.markersVisible) {
             console.log(this.props.corners);
