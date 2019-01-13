@@ -7,9 +7,9 @@ const height = { height: "100vh" };
 const center = { lat: 51.5, lng: 0.12 };
 const url = "https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg";
 
-const point1 = L.latLng(40.52256691873593, -3.7743186950683594),
-    point2 = L.latLng(40.5210255066156, -3.7734764814376835),
-    point3 = L.latLng(40.52180437272552, -3.7768453359603886);
+const topLeftCorner = L.latLng(40.522251, -3.776358),
+    topRightCorner = L.latLng(40.522251, -3.774176),
+    bottomLeftCorner = L.latLng(40.521027, -3.776358);
 
 // insert marker icon manually
 const customMarker = new L.icon({
@@ -18,17 +18,17 @@ const customMarker = new L.icon({
     iconAnchor: [12, 41]
 });
 
-const marker1 = L.marker(point1, {
+const topLeftMarker = L.marker(topLeftCorner, {
     icon: customMarker,
     draggable: true
 });
 
-const marker2 = L.marker(point2, {
+const topRightMarker = L.marker(topRightCorner, {
     icon: customMarker,
     draggable: true
 });
 
-const marker3 = L.marker(point3, {
+const bottomLeftMarker = L.marker(bottomLeftCorner, {
     icon: customMarker,
     draggable: true
 });
@@ -73,8 +73,16 @@ class MapExample extends Component {
 
                             <ImageOverlayRotated
                                 url={url}
-                                corners={[point1, point2, point3]}
-                                markers={[marker1, marker2, marker3]}
+                                corners={[
+                                    topLeftCorner,
+                                    topRightCorner,
+                                    bottomLeftCorner
+                                ]}
+                                markers={[
+                                    topLeftMarker,
+                                    topRightMarker,
+                                    bottomLeftMarker
+                                ]}
                                 opacity={this.state.opacity}
                                 markersVisible={this.state.markersVisible}
                             />
