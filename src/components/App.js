@@ -3,6 +3,7 @@ import { Map, TileLayer } from "react-leaflet";
 import L from "leaflet";
 import ImageOverlayRotated from "./ImageOverlayRotated";
 import { imagesUrls } from './imagesUrls';
+import { centers } from './centers';
 
 const height = { height: "100vh" };
 const center = { lat: 51.5, lng: 0.12 };
@@ -13,9 +14,11 @@ const url = imagesUrls[1];
 //     bottomLeftCorner = L.latLng(40.52180437272552, -3.7768453359603886);
 
 // location center
-const topLeftCorner = L.latLng(37.9972071, 23.818674582788);
-const topRightCorner = L.latLng(topLeftCorner.lat, topLeftCorner.lng + 0.00084);
-const bottomLeftCorner = L.latLng(topLeftCorner.lat - 0.00076, topLeftCorner.lng);
+const topLeftCorner = centers[0];
+// y: same with above, x: +0.002  0.00084
+const topRightCorner = L.latLng(topLeftCorner.lat, topLeftCorner.lng + 0.002);
+//  x: same with center's x, y: -0.001  0.00076
+const bottomLeftCorner = L.latLng(topLeftCorner.lat - 0.001, topLeftCorner.lng);
 
 // insert marker icon manually
 const customMarker = new L.icon({
