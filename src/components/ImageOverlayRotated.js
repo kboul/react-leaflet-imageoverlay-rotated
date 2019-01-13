@@ -61,6 +61,8 @@ class ImageOverlayRotated extends MapLayer {
     componentDidMount() {
         const { map } = this.props.leaflet;
         this.leafletElement.addTo(map);
+        // zoom out a bit to be more elegant presented
+        setTimeout(() => map.setZoom(map.getZoom() - 1), 10)
     }
 }
 
