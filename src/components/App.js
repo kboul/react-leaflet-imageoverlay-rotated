@@ -26,20 +26,14 @@ const customMarker = new L.icon({
     iconAnchor: [12, 41]
 });
 
-const topLeftMarker = L.marker(topLeftCorner, {
+const customMarkerOptions = {
     icon: customMarker,
     draggable: true
-});
+}
 
-const topRightMarker = L.marker(topRightCorner, {
-    icon: customMarker,
-    draggable: true
-});
-
-const bottomLeftMarker = L.marker(bottomLeftCorner, {
-    icon: customMarker,
-    draggable: true
-});
+const topLeftMarker = L.marker(topLeftCorner, customMarkerOptions);
+const topRightMarker = L.marker(topRightCorner, customMarkerOptions);
+const bottomLeftMarker = L.marker(bottomLeftCorner, customMarkerOptions);
 
 class MapExample extends Component {
     state = {
