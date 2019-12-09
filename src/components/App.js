@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Map, TileLayer } from "react-leaflet";
 import L from "leaflet";
 import ImageOverlayRotated from "./ImageOverlayRotated";
-import { imagesUrls } from './imagesUrls';
-import { centers } from './centers';
+import { centers, imagesUrls } from './constants';
 
 const height = { height: "100vh" };
 const center = { lat: 51.5, lng: 0.12 };
