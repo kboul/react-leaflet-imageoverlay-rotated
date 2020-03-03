@@ -7,11 +7,11 @@
         "jquery": "^3.4.1",
         "leaflet": "^1.6.0",
         "leaflet-imageoverlay-rotated": "^0.2.1",
-        "popper.js": "^1.16.0",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
+        "popper.js": "^1.16.1",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
         "react-leaflet": "^2.6.1",
-        "react-scripts": "^3.3.0"
+        "react-scripts": "^3.4.0"
     },
     "scripts": {
         "start": "react-scripts start",
