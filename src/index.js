@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'leaflet/dist/leaflet.css';
 import './index.css';
 
-import App from './components/App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
