@@ -3,15 +3,15 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "bootstrap": "^4.4.1",
-        "jquery": "^3.4.1",
-        "leaflet": "^1.6.0",
+        "bootstrap": "^4.5.2",
+        "jquery": "^3.5.1",
+        "leaflet": "^1.7.1",
         "leaflet-imageoverlay-rotated": "^0.2.1",
         "popper.js": "^1.16.1",
-        "react": "^16.13.0",
-        "react-dom": "^16.13.0",
-        "react-leaflet": "^2.6.1",
-        "react-scripts": "^3.4.0"
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-leaflet": "^2.7.0",
+        "react-scripts": "^3.4.3"
     },
     "scripts": {
         "start": "react-scripts start",

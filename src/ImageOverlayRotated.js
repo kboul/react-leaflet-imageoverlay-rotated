@@ -1,6 +1,6 @@
-import { withLeaflet, MapLayer } from "react-leaflet";
-import "leaflet-imageoverlay-rotated";
-import L from "leaflet";
+import { withLeaflet, MapLayer } from 'react-leaflet';
+import 'leaflet-imageoverlay-rotated';
+import L from 'leaflet';
 
 class ImageOverlayRotated extends MapLayer {
     createLeafletElement() {
@@ -34,9 +34,9 @@ class ImageOverlayRotated extends MapLayer {
             );
         }
 
-        markers[0].on("drag dragend", repositionImage);
-        markers[1].on("drag dragend", repositionImage);
-        markers[2].on("drag dragend", repositionImage);
+        markers[0].on('drag dragend', repositionImage);
+        markers[1].on('drag dragend', repositionImage);
+        markers[2].on('drag dragend', repositionImage);
 
         return overlay;
     }
@@ -66,7 +66,7 @@ class ImageOverlayRotated extends MapLayer {
         const { map } = this.props.leaflet;
         this.leafletElement.addTo(map);
         // zoom out a bit to be more elegant presented
-        setTimeout(() => map.setZoom(map.getZoom() - 1), 10)
+        setTimeout(() => map.setZoom(map.getZoom() - 1), 10);
     }
 }
 
